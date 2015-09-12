@@ -85,7 +85,7 @@ preferences {
 def installed() {
   log.debug "Installed with settings: ${settings}"
   subscribeToEvents()
-    initialize()
+  initialize()
 }
 
 /**
@@ -97,7 +97,7 @@ def updated() {
   log.debug "Updated with settings: ${settings}"
   unsubscribe()
   subscribeToEvents()
-    initialize()
+  initialize()
 }
 
 /**
@@ -122,7 +122,7 @@ def subscribeToEvents() {
   subscribe(button, "button", eventHandler)
   subscribe(carbonMonoxideDetector, "carbonMonoxide", eventHandler)
   subscribe(colorControl, "hue", eventHandler)
-    subscribe(colorControl, "saturation", eventHandler)
+  subscribe(colorControl, "saturation", eventHandler)
 
   subscribe(contactSensor, "contact", eventHandler)
   subscribe(doorControl, "door", eventHandler)
@@ -134,7 +134,7 @@ def subscribeToEvents() {
   subscribe(lock, "lock", eventHandler)
 
   subscribe(mediaController, "activities", eventHandler)
-    subscribe(mediaController, "currentActivity", eventHandler)
+  subscribe(mediaController, "currentActivity", eventHandler)
 
   subscribe(motionSensor, "motion", eventHandler)
   subscribe(musicPlayer, "status", eventHandler)
