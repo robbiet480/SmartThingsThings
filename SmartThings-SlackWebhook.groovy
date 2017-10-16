@@ -228,7 +228,9 @@ def eventHandler(evt) {
     fallback: evt.descriptionText
   ]
   def json_body = [
-      text: evt.descriptionText,
+      text: evt.descriptionText
+      	.replace("{{ linkText }}", evt.device.displayName ?: 'Device')
+        .replace("{{ value }}", evt.value.toString()),
       username: evt.displayName,
       attachments: [attachment]
   ]
